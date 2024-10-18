@@ -7,6 +7,10 @@ import Youtube from 'react-youtube'
 function RowPosters(props) {
  const [poster,setPoster]=useState([])
  const [yturl,setyt]=useState('')
+
+ const handleclose=()=>{
+  setyt(false)
+ }
   useEffect(()=>{
     axios.get(props.url).then((response)=>{
        setPoster(response.data.results)
@@ -42,7 +46,17 @@ function RowPosters(props) {
           )    
           }
         </div>
-        {yturl && <Youtube yturl opts={opts} videoId={yturl.key} ></Youtube>}
+        {yturl && <div><button onClick={handleclose} style={{position: 'absolute',
+              marginLeft:'143vh',
+              backgroundColor: '#D3D3D3',
+              color: '#0A0A0A',
+              marginTop:'15px',
+              opacity:'0.5',
+              border: 'none',
+              padding: '8px 13px',
+              cursor: 'pointer',
+              fontSize: '16px',
+              borderRadius: '50%' }}>x</button><Youtube yturl opts={opts} videoId={yturl.key} ></Youtube>  </div>}
       
     </div>
   ) 

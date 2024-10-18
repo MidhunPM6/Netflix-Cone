@@ -8,6 +8,7 @@
     padding: 20px;
     overflow-x: scroll;
     overflow-y: hidden;
+
     
 
 }
@@ -29,4 +30,16 @@
     transform: scale(1.3);
     transition-duration: 0.5s;
 
+}
+.close-btn{
+              position: 'absolute';
+              top: '10px';
+              right: '10px';
+              background-color: 'red';
+              color: 'white';
+              border: 'none';
+              padding: '5px 10px';
+              cursor: 'pointer';
+              font-Size: '16px';
+              border-Radius: '50%';
 }
